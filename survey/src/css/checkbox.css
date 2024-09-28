@@ -1,0 +1,64 @@
+
+.radio-group {
+    display: flex;
+    flex-direction: column; /* 使单选按钮垂直排列 */
+}
+
+.radio-group label {
+    margin-bottom: 10px; /* 可根据需要调整 */
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px;
+    color: #333;
+    transition: color 0.3s;
+}
+
+/* 隐藏原生单选按钮 */
+.radio-group input[type="radio"] {
+    display: none;
+}
+
+/* 自定义单选按钮的外框 */
+.radio-group .checkmark {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #333;
+    border-radius: 50%; /* 圆形 */
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* 自定义选中状态的单选按钮 */
+.radio-group input[type="radio"]:checked + .checkmark {
+    background-color: #333;
+    border-color: #333;
+}
+
+/* 选中状态下的点标记 */
+.radio-group input[type="radio"]:checked + .checkmark::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%; /* 圆形 */
+}
+
+/* 悬停效果 */
+.radio-group label:hover .checkmark {
+    border-color: #666;
+}
+
+/* 焦点效果 */
+.radio-group input[type="radio"]:focus + .checkmark {
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 使单选按钮独占一行显示 */
+.radio-group label {
+    width: 100%;
+}
